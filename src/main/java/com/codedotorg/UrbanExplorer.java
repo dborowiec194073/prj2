@@ -72,9 +72,10 @@ public class UrbanExplorer {
     public Scene createMainScene() {
         Label titleLabel = new Label("Urban Explorer");
         Button addButton = createAddButton();
+        Button addButton2 = createAddButton2();
 
         VBox mainLayout = new VBox(10);
-        mainLayout.getChildren().addAll(titleLabel, inputField, addButton, listView);
+        mainLayout.getChildren().addAll(titleLabel, inputField, addButton, addButton2, listView);
 
         Scene mainScene = new Scene(mainLayout, width, height);
 
@@ -98,10 +99,22 @@ public class UrbanExplorer {
         }
     }
 
+
     /**
-     * Sorts the cities in the 'cities' list based on their names.
+     * Sorts the cities in the 'cities' list alphabetically based on their names.
      */
     public void sortCities() {
+        int n = cities.size();
+        for (int i=0; i<cities.size(); i++) {
+            for (int j=i+1; j<cities.size(); j++) {
+                if (cities.get(i).getName().compareTo(cities.get(j).getName()) > 0) {
+                    City temp = cities.get(i);
+                    cities.set(i, cities.get(j));
+                    cities.set(j, temp);
+                }
+            }
+        }
+        refreshList();
         
 
     }
@@ -130,6 +143,19 @@ public class UrbanExplorer {
 
         tempButton.setOnAction(event -> {
             addCity();
+        });
+
+        return tempButton;
+    }
+    /**
+     * Creates a button with the label "Sort Cities" and sets its action to call the sortCities() method.
+     * 
+     **/
+    public Button createAddButton2() {
+        Button tempButton = new Button("Sort Cities");
+
+        tempButton.setOnAction(event -> {
+            sortCities();
         });
 
         return tempButton;
