@@ -24,12 +24,12 @@ Either as you go or after you are done writing your program, answer the followin
 
 **What did Copilot do well as the navigator?**
 
-Write your response here!
+Copilot did pretty well as the navigator, it help point me in the direction of what I should at next at any given moment, it gave some feedback, and pointed out the issues present in my implementation while suggesting a manner through which to improve it.
 
 **What did Copilot struggle with as the navigator?**
 
-Write your response here!
+Occassionally Copilot would "hallucinate" and suggest adding info to comments that dosn't mirror the functionallity of the code. For instance when I was writing my commit message it kept trying to suggest writing that the sort cities method sorts cities by population size as opposed to alphabetically.
 
 **What challenges did you face while working with Copilot as the navigator?**
 
-Write your response here!
+I didn't really face any challenges while working with Copilot
